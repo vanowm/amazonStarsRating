@@ -57,7 +57,4 @@ new MutationObserver(mutations =>
 	}
 }).observe(document, { childList: true, subtree: true });
 
-document.addEventListener("DOMContentLoaded", () =>
-{
-});
 })();
