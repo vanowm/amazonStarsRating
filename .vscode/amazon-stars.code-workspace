@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"editor.tabSize": 4,
+		"cSpell.words": [
+			"allman",
+			"cond",
+			"IIFE",
+			"paren",
+			"parens",
+			"puis",
+			"sonarjs"
+		],
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch Edge",
+				"request": "launch",
+				"type": "msedge",
+				"version": "stable",
+				"url": "https://www.amazon.com/s?k=blah",
+				"webRoot": "${workspaceFolder}",
+				"logTimestamps": true,
+				"outputCapture": "console",
+				"runtimeArgs": [
+					"--auto-open-devtools-for-tabs"
+				]
+			  },
+		],
+		"compounds": []
+	}
+
+}
