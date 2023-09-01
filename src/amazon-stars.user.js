@@ -3,9 +3,10 @@
 // @namespace    V@no
 // @author       V@no
 // @description  Restore stars rating on Amazon product pages
-// @include      https://www.amazon.*/*
+// @include      https://amazon.*/*
+// @include      https://*.amazon.*/*
 // @license      MIT
-// @version      1.0.1
+// @version      1.0.2
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
@@ -24,9 +25,9 @@ const processNode = node =>
 	for (let i = 0; i < nlSingleStar.length; i++)
 	{
 		const el = nlSingleStar[i];
-		const ratingFull = el.textContent;
-		const rating = ratingFull.split(".");
-		rating[1] = rating[1][0];
+		const ratingFull = el.textContent; //4.6 out of 5 stars
+		const rating = ratingFull.split("."); //["4", "6 out of 5 stars"]
+		rating[1] = rating[1][0]; //discard everything after first digit
 		if (rating[1] > 6 && rating[0] < 4)
 			rating[0] = ++rating[0];
 
@@ -45,6 +46,7 @@ const processNode = node =>
 	}
 };
 
+//support for dynamically added content
 new MutationObserver(mutations =>
 {
 	for (let i = 0; i < mutations.length; i++)
