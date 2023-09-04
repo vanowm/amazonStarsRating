@@ -204,6 +204,7 @@
 		"unicorn/prefer-at": "off",
 		"unicorn/no-for-loop": "off",
 		"unicorn/no-new-array": "off",
+    "unicorn/filename-case": "off",
     "userscripts/better-use-match": "off"
   },
   "root": true,
